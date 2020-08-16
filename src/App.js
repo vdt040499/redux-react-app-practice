@@ -1,13 +1,15 @@
 import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-  Link,
+
+
+  Redirect, Route,
+  Switch
 } from "react-router-dom";
 import "./App.scss";
+import Header from './components/Header';
 import NotFound from "./components/NotFound";
+
 
 // Lazy load - Code splitting
 const Photo = React.lazy(() => import("./features/Photo"));
@@ -17,7 +19,8 @@ function App() {
     <div className="photo-app">
       <Suspense fallback={<div>Loading ...</div>}>
         <Router>
-          <ul>
+          <Header/>
+          {/* <ul>
             <li>
               <Link to="/photos">Go to photo page</Link>
             </li>
@@ -27,7 +30,7 @@ function App() {
             <li>
               <Link to="/photos/123">Go to Edit photo page</Link>
             </li>
-          </ul>
+          </ul> */}
 
           <Switch>
             <Redirect exact from="/" to="/photos" />
