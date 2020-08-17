@@ -1,10 +1,10 @@
-import React from 'react';
+import { PHOTO_CATEGORY_OPTION } from 'constants/global';
+import Images from 'constants/images';
 import PropTypes from 'prop-types';
-
-import Images from '../../../../constants/images';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import React from 'react';
 import Select from 'react-select';
-import { PHOTO_CATEGORY_OPTION } from '../../../../constants/global';
+import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+
 
 PhotoForm.propTypes = {
     onSubmit: PropTypes.func,
