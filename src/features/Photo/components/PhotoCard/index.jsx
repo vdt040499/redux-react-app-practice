@@ -30,9 +30,7 @@ function PhotoCard(props) {
     <div className="photo">
       <img src={photo.photo} alt={photo.title} />
       <div className="photo__overlay">
-        <div className="photo__title">
-          <h3>{photo.photo}</h3>
-        </div>
+          <h3 className="photo__title" >{photo.photo}</h3>
         <div className="photo__actions">
           <div>
             <Button outline size="sm" color="light" onClick={handleEditClick}>

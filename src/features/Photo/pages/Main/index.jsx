@@ -4,12 +4,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import PhotoList from 'features/Photo/components/PhotoList';
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { removePhoto } from 'features/Photo/photoSlice';
 Main.propTypes = {};
 
 function Main(props) {
-
+    const dispatch = useDispatch();
     const photos = useSelector(state => state.photos);
     console.log(photos);
 
@@ -19,6 +19,9 @@ function Main(props) {
 
     const handlePhotoRemoveClick = (photo) => {
         console.log(photo);
+        const removePhotoId = photo.id;
+        const action = removePhoto(removePhotoId);
+        dispatch(action);
     }
 
     return (
