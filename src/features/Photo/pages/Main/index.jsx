@@ -1,7 +1,7 @@
 import Banner from 'components/Banner';
 import Images from 'constants/images';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import PhotoList from 'features/Photo/components/PhotoList';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,9 +12,11 @@ function Main(props) {
     const dispatch = useDispatch();
     const photos = useSelector(state => state.photos);
     console.log(photos);
+    const history = useHistory();
 
     const handlePhotoEditClick = (photo) => {
         console.log(photo);
+        history.push(`/photos/${photo.id}`);
     }
 
     const handlePhotoRemoveClick = (photo) => {
